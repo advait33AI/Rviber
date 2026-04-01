@@ -1,0 +1,155 @@
+---
+title: "Getting Started with rviber"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with rviber}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+## Installation
+
+```r
+devtools::install_github("yourusername/rviber")
+```
+
+## First-Time Setup (30 seconds)
+
+Run the setup wizard once:
+
+```r
+library(rviber)
+rviber_setup()
+```
+
+You'll be asked to:
+
+1. Pick a provider (Groq, Gemini, OpenAI, Anthropic, Ollama, etc.)
+2. Paste your API key (or press Enter for Ollama — no key needed)
+3. Pick a default model
+
+Your settings are saved to `~/.rviber/config.json` and persist across sessions.
+
+## Opening the Assistant
+
+```r
+rviber_addin()
+# or: Addins menu → rviber: Open AI Assistant
+```
+
+The panel opens inside RStudio's Viewer pane. You can switch to a floating window in the Settings tab.
+
+## The Chat Panel
+
+Type any R question. The AI knows your context and will respond with runnable code.
+
+**Action buttons:**
+
+- **Explain** — select code in the editor → click Explain → AI describes it
+- **Fix bugs** — select broken code → click Fix → AI fixes it and inserts the corrected version
+- **Improve** — select code → click Improve → AI refactors it
+- **Complete** — click Complete → AI continues your code from the cursor
+- **Run+Debug** — select code → click Run+Debug → executes it and AI explains the output
+- **Clear** — clears the chat history
+
+## Generate Code from English
+
+Go to the **Generate** tab (or Addins → Generate Code):
+
+```
+Describe what you want:
+"Read all CSV files in a folder, combine them, remove NA rows,
+ and calculate the mean of numeric columns grouped by 'category'"
+```
+
+The AI writes the code and inserts it at your cursor.
+
+## Generate ggplot2 Charts
+
+Go to the **Plot** tab (or Addins → Generate Plot):
+
+```
+Describe the chart:
+"A violin plot of price by cut from the diamonds dataset,
+ filled by cut using the viridis palette, with a clean theme"
+```
+
+The ggplot2 code is inserted directly into your script.
+
+## Using from the Console
+
+All features work as plain R functions:
+
+```r
+# Chat
+rviber_chat("What's the difference between lapply and sapply?")
+
+# Explain code
+rviber_explain(code = "purrr::map_dfr(files, read_csv)")
+
+# Fix bugs
+rviber_fix(code = "ggplot(df) + geom_pont(aes(x = wt, y = mpg))")
+
+# Generate
+rviber_generate("create a function that validates email addresses using regex")
+
+# Plot
+rviber_plot("histogram of hwy from mpg dataset with 20 bins")
+```
+
+## Switching Providers
+
+```r
+# Groq (fast, free tier)
+set_provider("groq", model = "llama-3.3-70b-versatile")
+
+# Google Gemini (free tier)
+set_provider("gemini", model = "gemini-2.0-flash")
+
+# Ollama — 100% local, no internet, no API key
+set_provider("ollama", model = "codellama")
+
+# OpenAI
+set_provider("openai", model = "gpt-4o")
+```
+
+Or use the **Settings** tab in the panel — change provider and model with dropdowns.
+
+## Setting API Keys
+
+**Best way** — add to `~/.Renviron` so they load automatically:
+
+```
+GROQ_API_KEY=gsk_...
+GEMINI_API_KEY=AIza...
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+Then restart R. Or paste directly in the Settings tab.
+
+## Using Ollama (No API Key, 100% Local)
+
+```bash
+# Terminal:
+ollama pull codellama
+ollama serve
+```
+
+```r
+set_provider("ollama", model = "codellama")
+rviber_addin()
+```
+
+Everything runs on your machine. Nothing sent anywhere.
+
+## Keyboard Shortcut
+
+Bind rviber to a shortcut:
+**Tools → Modify Keyboard Shortcuts → search "rviber" → assign shortcut**
+
+Suggested: `Ctrl+Shift+A` / `Cmd+Shift+A`

@@ -1,0 +1,39 @@
+Name: rviber: Open AI Assistant
+Description: Open the rviber AI coding assistant panel inside RStudio
+Binding: rviber_addin
+Interactive: true
+
+Name: rviber: Explain Selected Code
+Description: Explain what the selected R code does
+Binding: rviber_explain
+Interactive: false
+
+Name: rviber: Fix Bugs in Selection
+Description: Find and fix bugs in the selected R code
+Binding: rviber_fix
+Interactive: false
+
+Name: rviber: Improve Selected Code
+Description: Refactor and improve the selected R code
+Binding: rviber_improve
+Interactive: false
+
+Name: rviber: Complete My Code
+Description: Autocomplete code from where you left off
+Binding: rviber_complete
+Interactive: false
+
+Name: rviber: Generate Code from Description
+Description: Generate R code from a plain English description (prompts for input)
+Binding: rviber_generate_addin
+Interactive: true
+
+Name: rviber: Generate ggplot2 Chart
+Description: Generate a ggplot2 chart from a description
+Binding: rviber_plot_addin
+Interactive: true
+
+Name: rviber: Setup / Change Provider
+Description: Configure your AI provider and API key
+Binding: rviber_setup
+Interactive: true

@@ -1,0 +1,36 @@
+Package: rviber
+Type: Package
+Title: AI Vibe Coder for RStudio — Chat, Generate, Fix and Run R Code
+Version: 0.1.0
+Authors@R: person("Your Name", email = "you@example.com", role = c("aut", "cre"))
+Description: An AI-powered coding assistant that lives inside RStudio.
+    Supports Groq, Gemini, OpenAI, Anthropic, Ollama, Mistral, and any
+    OpenAI-compatible provider. Chat with AI about your code, generate R
+    scripts from plain English, fix errors, explain selected code, autocomplete
+    the next lines, run and debug code, and generate ggplot2 charts — all
+    without leaving RStudio.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.1
+Depends:
+    R (>= 4.1.0)
+Imports:
+    shiny (>= 1.7.0),
+    miniUI (>= 0.1.1),
+    rstudioapi (>= 0.14),
+    httr2 (>= 1.0.0),
+    jsonlite (>= 1.8.0),
+    glue (>= 1.6.0),
+    cli (>= 3.6.0),
+    htmltools (>= 0.5.0),
+    shinyjs (>= 2.1.0),
+    markdown (>= 1.10),
+    later (>= 1.3.0)
+Suggests:
+    testthat (>= 3.0.0),
+    withr,
+    knitr,
+    rmarkdown
+URL: https://github.com/yourusername/rviber
+BugReports: https://github.com/yourusername/rviber/issues
