@@ -1,6 +1,6 @@
 # rviber 🤖
 
-**An AI vibe coder built into RStudio.** Chat, generate, fix, explain, complete, and plot R code — powered by Groq, Gemini, OpenAI, Anthropic, Ollama, or any provider. Everything happens inside RStudio without leaving your editor.
+**An AI vibe coder built into RStudio.** Chat, generate, fix, explain, complete, and plot R code, powered by Groq, Gemini, OpenAI, Anthropic, Ollama, or any provider. Everything happens inside RStudio without leaving your editor.
 
 [![R-CMD-check](https://github.com/yourusername/rviber/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yourusername/rviber/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -10,7 +10,7 @@
 
 ## What is rviber?
 
-rviber is an R package that puts an AI coding assistant directly inside RStudio. Select code, click a button, and the AI explains it, fixes it, or improves it — right in your editor. Type in plain English and get complete R scripts back. Describe a chart and get ggplot2 code.
+rviber is an R package that puts an AI coding assistant directly inside RStudio. Select code, click a button, and the AI explains it, fixes it, or improves it, right in your editor. Type in plain English and get complete R scripts back. Describe a chart and get ggplot2 code.
 
 It works as three things at once:
 - An **RStudio Addin** — 8 actions in the Addins menu
